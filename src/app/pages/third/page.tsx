@@ -9,6 +9,7 @@ const page = () => {
       imageSrc={
         "https://i1.pickpik.com/photos/93/250/485/sun-sunlight-winter-sky-preview.jpg"
       }
+      discription={true}
     />
   );
 };

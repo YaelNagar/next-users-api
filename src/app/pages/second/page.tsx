@@ -9,6 +9,7 @@ const page = () => {
       imageSrc={
         "https://i1.pickpik.com/photos/555/608/851/sunset-sky-clouds-orange-preview.jpg"
       }
+      discription={true}
     />
   );
 };

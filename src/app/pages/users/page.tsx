@@ -22,7 +22,13 @@ const Page = () => {
   return (
     <div className="w-100% flex flex-row flex-wrap place-content-center items-center">
       {users.map((user) => (
-        <Card key={user.id} text={user.firstName} imageSrc={user.image} />
+        <Card
+          key={user.id}
+          text={user.firstName}
+          imageSrc={user.image}
+          link={`users/${user.id}`}
+          discription={false}
+        />
       ))}
     </div>
   );

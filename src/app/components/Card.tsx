@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
-import CardProps from "@/app/types/cardProps";
+import CardProps from "@/app/types/CardProps";
 
-const Card: React.FC<CardProps> = ({ text, link, imageSrc }) => {
+const Card: React.FC<CardProps> = ({ text, link, imageSrc, discription }) => {
   return (
     <>
-      <div className="flex flex-column place-content-center items-center mr-5">
+      <div className="w-100% flex flex-column place-content-center items-center mr-5">
         <div className="w-60 place-content-center shadow p-5 mt-10">
           <Image
             width={200}
@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ text, link, imageSrc }) => {
             alt="Sunset in the mountains"
           />
 
-          {link && (
+          {discription && (
             <div className="text-center pt-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Voluptatibus quia, nulla! Maiores et perferendis eaque,

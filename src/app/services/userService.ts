@@ -10,3 +10,13 @@ export const getUsers = async (): Promise<User[]> => {
     throw error;
   }
 };
+
+export const getUser = async (id: string): Promise<User> => {
+  try {
+    const response = await axios.get(`https://dummyjson.com/users/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+};

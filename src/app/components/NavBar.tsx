@@ -11,7 +11,7 @@ const NavBar: React.FC = () => {
     { text: "first", href: "/pages/first" },
     { text: "second", href: "/pages/second" },
     { text: "third", href: "/pages/third" },
-    { text: "users", href: "/pages/users" }
+    { text: "users", href: "/pages/users" },
   ];
 
   return (
