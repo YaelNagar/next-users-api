@@ -5,11 +5,18 @@ import Card from "@/app/components/Card";
 
 const page = async (props: Params) => {
   const { userId } = props.params;
-  const { id, firstName, image } = await getUser(userId);
+  const { id, firstName, lastName, image } = await getUser(userId);
 
   return (
     <>
-      <Card key={id} text={firstName} imageSrc={image} discription={false} />
+      <Card
+        key={id}
+        id={id}
+        firstName={firstName}
+        lastName={lastName}
+        imageSrc={image}
+        details={true}
+      />
     </>
   );
 };

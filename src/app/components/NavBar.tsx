@@ -4,7 +4,7 @@ import Button from "./Button";
 const NavBar: React.FC = () => {
   interface ButtonProps {
     text: string;
-    href: string;
+    href?: string;
   }
 
   const buttonArr: ButtonProps[] = [
@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
         <div className="text-white">My Website</div>
         <div className="text-white flex flex-row space-x-4 items-center">
           {buttonArr.map((button, index) => (
-            <Button key={index} text={button.text} href={button.href} />
+            <Button key={index} text={button.text} href={button.href || "/"} />
           ))}
         </div>
       </div>
