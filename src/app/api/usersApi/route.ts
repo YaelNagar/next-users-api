@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
+import PostApi from "@/app/types/Practice";
 
 export async function GET() {
-  return NextResponse.json({ message: "message get" });
+  const practice: PostApi[] = Array.from({ length: 30 }).map((_, index) => {
+    return {
+      id: index + 1,
+      title: `Post title ${index}`,
+      body: `Post body ${index}`,
+    };
+  });
+  return NextResponse.json({ practice });
 }
 
 export async function DELETE() {

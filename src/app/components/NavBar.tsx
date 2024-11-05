@@ -12,6 +12,7 @@ const NavBar: React.FC = () => {
     { text: "second", href: "/pages/second" },
     { text: "third", href: "/pages/third" },
     { text: "users", href: "/pages/users" },
+    { text: "practice", href: "/pages/practice" },
   ];
 
   return (

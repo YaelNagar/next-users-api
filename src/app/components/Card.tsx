@@ -14,21 +14,23 @@ const Card: React.FC<CardProps> = ({
   link,
   text,
 }) => {
-  const [isEditing, setIsEditing] = useState(false); // מצב עריכה
+  const [isEditing, setIsEditing] = useState(false);
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
   const updateUser = useStore((state) => state.update);
 
   const handleBlur = () => {
-    updateUser(id, { firstName: newFirstName, lastName: newLastName });
-    setIsEditing(false);
+    if (id) {
+      updateUser(id, { firstName: newFirstName, lastName: newLastName });
+      setIsEditing(false);
+    }
   };
 
   return (
     <div className="w-100% flex flex-col items-center mr-5">
       <div className="w-60 flex flex-col items-center shadow p-5 mt-10">
         <Image width={200} height={200} src={imageSrc} alt="User image" />
-        {isEditing ? (
+        {isEditing && (
           <div className="text-center">
             <input
               type="text"
@@ -47,8 +49,21 @@ const Card: React.FC<CardProps> = ({
               placeholder="Last Name"
             />
           </div>
-        ) : (
+        )}
+        {firstName && !isEditing && (
           <p className="text-center">{firstName + " " + lastName}</p>
+        )}
+        {!firstName && (
+          <>
+            <div className="font-bold text-xl mb-2 text-center mt-5">
+              The Coldest Sunset
+            </div>
+            <p className="text-gray-700 text-base text-center mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, nulla! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </>
         )}
 
         <div className="flex space-x-4 mt-6 w-full">
